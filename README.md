@@ -34,7 +34,7 @@ Le projet est le fruit d'une collaboration entre quatre pôles d'expertise :
 * 🟢 **VERRE**
 
 
-5. **Fermeture & Sync** : Le bac se referme automatiquement après **5 secondes**. Les données sont synchronisées sur le **Site Web** et l'**Application Android**.
+5. **Fermeture & Sync** : Le bac se referme automatiquement après ** minimum 15 secondes**. Les données sont synchronisées sur le **Site Web** et l'**Application Android**.
 
 ## 🛠️ Stack Technique Global
 
