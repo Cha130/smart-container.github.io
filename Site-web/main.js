@@ -8,16 +8,28 @@ const loginScreen = document.getElementById('login-screen');
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const user = document.getElementById('username').value.toLowerCase();
-    
-    loginScreen.classList.add('hidden');
-    appScreen.classList.remove('hidden');
+    const pass = document.getElementById('password').value; // On récupère le MDP
 
-    if (user === 'admin' || user === 'gardien') {
+    if ((user === 'admin' || user === 'gardien') && pass === 'admin123') {
+        // Accès Admin
+        loginScreen.classList.add('hidden');
+        appScreen.classList.remove('hidden');
         setupGardien();
-    } else {
+    } 
+    else if (user === 'appart100' && pass === '1234') {
+        // Accès Résident spécifique
+        loginScreen.classList.add('hidden');
+        appScreen.classList.remove('hidden');
         setupResident();
+    } 
+    else {
+        // Erreur si ce ne sont pas les bons identifiants
+        alert("Identifiant ou mot de passe incorrect !");
     }
 });
+
+
+
 
 function setupGardien() {
     document.getElementById('user-tag').innerText = "👨‍✈️ Gardien (Admin)";
