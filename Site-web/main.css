@@ -66,3 +66,58 @@ button:hover { background: #27ae60; transform: scale(1.02); }
     background: rgba(61, 90, 254, 0.1); border-radius: 30px; 
     text-decoration: none; color: var(--accent-blue); font-size: 0.8rem;
 }
+
+
+
+#css de la partie rubrique pilotage des accès 
+.central-command {
+    background: #2c3e50;
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-left: 5px solid #27ae60;
+}
+
+.btn-main-action {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 0 #1e8449;
+}
+
+.btn-main-action:hover {
+    background: #2ecc71;
+    transform: translateY(-2px);
+}
+
+.btn-main-action:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.units-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.unit-btn {
+    border: none;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.unit-btn span { font-size: 0.8em; opacity: 0.8; }

@@ -32,9 +32,10 @@ loginForm.addEventListener('submit', (e) => {
 
 
 function setupGardien() {
-    document.getElementById('user-tag').innerText = "👨‍✈️ Gardien (Admin)";
+    document.getElementById('user-tag').innerText = " Gardien (Admin)";
     menuNav.innerHTML = `
         <div onclick="show('bacs')">📊 État des Bacs</div>
+        <div onclick="show('Accès')">🔐 Pilotage des Accès</div>
         <div onclick="show('notifs')">🔔 Notifications</div>
         <div onclick="show('chat')">💬 Messages</div>
         <div onclick="show('users')">👥 Gestion Résidents</div>
@@ -111,4 +112,44 @@ function show(page) {
 
 function logout() {
     location.reload();
+}
+
+///mettre dand l'ordre les rubrique selon lordre logique du site web 
+
+function renderPilotage() {
+    return `
+        <div class="pilotage-view fade-in">
+            <div class="section-card">
+                <h2>Pilotage à Distance</h2>
+                <p class="subtitle">Gestion sécurisée des ouvertures de bacs</p>
+
+                <div class="central-command">
+                    <div class="command-text">
+                        <h3>Déverrouillage Centralisé</h3>
+                        <p>Actionner l'ouverture complète des trois unités</p>
+                    </div>
+                    <button class="btn-main-action" onclick="apiCall('open-all')">
+                        OUVERTURE COMPLÈTE
+                    </button>
+                </div>
+
+                <div class="separator">OUVERTURE PAR UNITÉ</div>
+
+                <div class="units-grid">
+                    <button class="unit-btn plastic" onclick="apiCall('open', 'jaune')">
+                        <strong>BAC JAUNE</strong>
+                        <span>Plastique / Emballage</span>
+                    </button>
+                    <button class="unit-btn glass" onclick="apiCall('open', 'verte')">
+                        <strong>BAC VERT</strong>
+                        <span>Verre / Bouteilles</span>
+                    </button>
+                    <button class="unit-btn paper" onclick="apiCall('open', 'bleu')">
+                        <strong>BAC BLEU</strong>
+                        <span>Papier / Carton</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
 }
